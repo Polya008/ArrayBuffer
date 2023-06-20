@@ -11,12 +11,16 @@ export function getBuffer() {
 }
 
 export default class ArrayBufferConverter {
-  load(buf) {
-    const b = new Uint16Array(buf);
-    const str = [];
-    b.forEach((item) => {
-      str.push(String.fromCharCode(item));
-    });
-    return str.join('');
+  static load(buffer) {
+    this.buffer = buffer;
+  }
+
+  static toString() {
+    const bufferView = new Uint16Array(this.buffer);
+    let outputString = '';
+    for (let i = 0; i < bufferView.length; i += 1) {
+      outputString += String.fromCharCode(bufferView[i]);
+    }
+    return outputString;
   }
 }
