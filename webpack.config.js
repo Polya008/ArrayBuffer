@@ -1,8 +1,6 @@
-
 const path = require('path');
 
-
-module.exports =  {
+module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
@@ -16,5 +14,5 @@ module.exports =  {
         },
       },
     ],
-  }
-}
+  },
+};

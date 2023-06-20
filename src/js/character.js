@@ -4,21 +4,21 @@ export default class Character {
   }
 
   set stoned(stoned) {
-    this._stoned = stoned;
+    this.stoned = stoned;
   }
-  
+
   get stoned() {
-    return this._stoned;
+    return this.stoned;
   }
-  
+
   set attack(attack) {
-    this._attack = attack * ((100 - ((this.n - 1) * 10)) / 100);
+    this.attack = attack * ((100 - ((this.n - 1) * 10)) / 100);
     if (this.stoned) {
-      this._attack = this.attack - Math.log2(this.n) * 5;
+      this.attack -= Math.log2(this.n) * 5;
     }
   }
-  
+
   get attack() {
-    return this._attack;
+    return this.attack;
   }
 }

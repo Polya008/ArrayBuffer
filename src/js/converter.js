@@ -3,7 +3,7 @@ export function getBuffer() {
   return ((input) => {
     const buffer = new ArrayBuffer(data.length * 2);
     const bufferView = new Uint16Array(buffer);
-    for (let i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i += 1) {
       bufferView[i] = input.charCodeAt(i);
     }
     return buffer;
@@ -11,8 +11,8 @@ export function getBuffer() {
 }
 
 export default class ArrayBufferConverter {
-  load(buffer) {
-    const b = new Uint16Array(buffer);
+  load(buf) {
+    const b = new Uint16Array(buf);
     const str = [];
     b.forEach((item) => {
       str.push(String.fromCharCode(item));
