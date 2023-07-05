@@ -1,4 +1,4 @@
-import BufferConverter, { getBuffer } from '../js/Converter.js';
+import BufferConverter, { getBuffer } from '../js/Converter';
 
 test('Тестируем метод load(). Если объекты совпадают - sucess', () => {
   const buffer = getBuffer();
