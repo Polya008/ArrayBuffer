@@ -20,5 +20,5 @@ export default class Character {
      if (this._stoned) {
       this._attack -= Math.log2(this.n) * 5;
      }
-    
+   }
 }
