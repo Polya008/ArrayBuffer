@@ -12,13 +12,13 @@ export default class Character {
   }
 
   set attack(attack) {
-    if (this._stoned) {
-      this.attack -= Math.log2(this.n) * 5;
-    }
+    return this._attack;
   }
 
   get attack() {
     this._attack = this._attack * ((100 - ((this.n - 1) * 10)) / 100);
-    return this._attack;
-  }
+     if (this._stoned) {
+      this._attack -= Math.log2(this.n) * 5;
+     }
+    
 }
