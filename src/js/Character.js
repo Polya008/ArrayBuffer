@@ -12,7 +12,7 @@ export default class Character {
   }
 
   set attack(attack) {
-    return this._attack;
+    this._attack = attack;
   }
 
   get attack() {
